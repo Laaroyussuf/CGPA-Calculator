@@ -25,7 +25,7 @@ def get_data(grade_system, num_courses):
 def class_5(cgpa):
     if cgpa >= 4.5:
         st.balloons()
-        st.success(f'CGPA: {cgpa} First Class')
+        st.success(f'CGPA: {cgpa}')
         return 'Congratulation! You are in First Class.'
     elif 3.5 <= cgpa < 4.5:
         st.success(f'CGPA: {cgpa}')
@@ -81,10 +81,12 @@ def main():
         st.write(f'Total Unit: {total_unit}')
 
         if grade_system == 5.0:
+            st.write('Using the grading system of 5.0 scale...')
             supposed_total_point = 5 * total_unit
             st.write(f'Your Total point: {user_total_point} out of {supposed_total_point}')
             st.write(class_5(cgpa))
         else:
+            st.write('Using the grading system of 4.0 scale...')
             supposed_total_point = 4 * total_unit
             st.write(f'Your Total point: {user_total_point} out of {supposed_total_point}')
             st.write(class_4(cgpa))
